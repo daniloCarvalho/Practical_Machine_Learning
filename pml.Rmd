@@ -1,12 +1,13 @@
 ---
 title: "Qualitative Activity Recognition on Weight Lifting Exercise"
-author: Danilo Carvalho
-date: July 16, 2014
+author: "Danilo Carvalho"
+date: "July 16, 2014"
 output:
-    html_document:
-        theme: cerulean
-        highlight: tango
-        css: custom.css
+  html_document:
+    css: custom.css
+    highlight: tango
+    keep_md: yes
+    theme: cerulean
 ---
 
 # Synopsis

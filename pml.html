@@ -252,27 +252,21 @@ PCAtestX  &lt;-<span class="st"> </span><span class="kw">predict</span>(preProc,
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Train the data using Random Forest</span>
 trControl &lt;-<span class="st"> </span><span class="kw">trainControl</span>(<span class="dt">method =</span> <span class="st">&quot;cv&quot;</span>, <span class="dt">number =</span> <span class="dv">4</span>)
 modFit &lt;-<span class="st"> </span><span class="kw">train</span>(PCAtrainX, trainY, <span class="dt">method =</span> <span class="st">&quot;rf&quot;</span>, <span class="dt">trControl=</span>trControl, <span class="dt">importance=</span><span class="ot">TRUE</span>)</code></pre>
-<pre><code>## Loading required package: randomForest
-## randomForest 4.6-7
-## Type rfNews() to see new features/changes/bug fixes.</code></pre>
 </div>
 <div id="predict-out-of-sample-error" class="section level3">
 <h3>Predict out-of-sample error</h3>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Predict out-of-sample error</span>
-testPred &lt;-<span class="st"> </span><span class="kw">predict</span>(modFit, <span class="dt">newdata =</span> PCAtestX)</code></pre>
-<pre><code>## Loading required package: randomForest
-## randomForest 4.6-7
-## Type rfNews() to see new features/changes/bug fixes.</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">matrixTest &lt;-<span class="st"> </span><span class="kw">confusionMatrix</span>(testPred, testY)
+testPred &lt;-<span class="st"> </span><span class="kw">predict</span>(modFit, <span class="dt">newdata =</span> PCAtestX)
+matrixTest &lt;-<span class="st"> </span><span class="kw">confusionMatrix</span>(testPred, testY)
 
 accuracyOut &lt;-<span class="st"> </span>matrixTest$overall[<span class="dv">1</span>]
 
 accuracyOut</code></pre>
 <pre><code>## Accuracy 
-##   0.9692</code></pre>
+##   0.9694</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">outError &lt;-<span class="st"> </span><span class="dv">1</span> -<span class="st"> </span>accuracyOut
 outError[[<span class="dv">1</span>]]</code></pre>
-<pre><code>## [1] 0.03079</code></pre>
+<pre><code>## [1] 0.03059</code></pre>
 <p>The estimated out-of-sample error is 1.000 minus the model’s accuracy, the later of which is provided in the output of the confusionmatrix, or more directly via the ‘postresample’ function.</p>
 <p>In order to estimate the the <em>out-of-sample error</em>, we take the complement of the <em>accuracy</em> of our model.</p>
 <ul>
