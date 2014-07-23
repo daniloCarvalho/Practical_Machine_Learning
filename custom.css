@@ -1,0 +1,100 @@
+/* Set the main font to Calibri, same 
+   as My Word 2010 uses. Also set the 
+   default font size to 11pt.
+ 
+   The maximum width to 35em enhances 
+   readability through optimal line 
+   length. Note: this setting is ignored
+   by Word/Libre Office*/
+body  {
+   font-family: Myriad Pro;
+   font-size: 11pt;
+   background-color: white;
+   padding-top: 1em;
+   margin: auto;
+   max-width: 50em;
+}
+ 
+/* Set the paragraph margin and 
+   padding to 0 except for the bottom */
+p {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 10pt;
+}
+ 
+/* Center the table and add top/bottom margins */
+table{
+  margin: auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  border: none;
+}
+ 
+/* The tr padding/margin 0 is important for table
+   import, while the font needs to be specified as
+   font and not font-family/font-size due to limiations
+   in Libre Office */
+td, tr{
+  font: 10pt Myriad Pro;
+  padding: 0px;
+  margin: 0px;
+}
+ 
+/* The cell should have a little space to easy reading
+   although this section is mostly ignored by the 
+   Libre Office import */
+td {
+  padding: 4px;
+  padding-bottom: 2px;
+}
+ 
+/* Set the headings to correspond to Word-style */
+h1, h2, h3, h4, h5, h6 {
+  margin: 10pt 0pt 0pt 0pt;
+  font-family: Myriad Pro;
+  font-weight: bold;
+}
+ 
+/* h1 has a slightly larger top margins 
+   so we re-set that from the other*/
+h1 {
+  margin: 24pt 0pt 0pt 0pt;
+  font-size: 14pt;
+  color: #365F91;
+}
+ 
+ 
+h2 {
+  font-size: 13pt;
+  color: #4F81BD;
+}
+ 
+h3 {
+  font-size: 11pt;
+  color: #4F81BD;
+}
+ 
+h4 {
+  font-size: 11pt;
+  font-weight: bold;
+  font-style: italic;
+  color: #4F81BD;
+}
+ 
+h5 {
+  font-size: 11pt;
+  font-weight: normal;
+  color: #243F5D;
+}
+ 
+h6 {
+  font-size: 11pt;
+  font-weight: normal;
+  font-style: italic;
+  color: #243F5D;
+}
+
+tt, code, pre {
+   font-family: Monaco;
+}
