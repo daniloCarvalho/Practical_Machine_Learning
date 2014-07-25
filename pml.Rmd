@@ -171,19 +171,19 @@ PCAtestX  <- predict(preProc, testX)
 ```
 
 
-## Building the Model: Three Based Methods
+## Building the Model: Tree Based Methods
 
 ### Overview
 
-Three-based methods for classification involve stratifying or segmenting the predictor space into a number of simple regions. In order to make a prediction for a given observation, we typically use most commonly occurring class of training observations in the region to which it belongs. Since the set of splitting rules used to segment the predictor space can be summarized in a tree, these types of approaches are known as decision tree methods.
+Tree-based methods for classification involve stratifying or segmenting the predictor space into a number of simple regions. In order to make a prediction for a given observation, we typically use most commonly occurring class of training observations in the region to which it belongs. Since the set of splitting rules used to segment the predictor space can be summarized in a tree, these types of approaches are known as decision tree methods.
 
-### Aggregating Three Methods: Random Forest
+### Aggregating Tree Methods: Random Forest
 
 Tree-based methods are simple and useful for *interpretation*. However, they typically are not competitive with the best supervised learning approaches in terms of prediction *accuracy*. 
 
 *Random forests* overcomes this problem producing multiple trees which are then combined to yield a single consensus prediction. Combining a large number of trees can often result in dramatic improvements in prediction accuracy, at the expense of some loss in interpretation.
 
-### Pruning the threes  
+### Pruning the Trees  
 
 To prune our Random Forest model we chose the *Cros-Validation* method instead of the default *Bootstrapping* method which concretely prodices the same level of *accurary* at a cost of a much longer computational time.  
 
